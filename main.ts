@@ -1,10 +1,9 @@
 basic.forever(function () {
-    fwdSensors.ledRing.fwdSetAllPixelsColour(0xff0000)
     if (fwdSensors.solar1.fwdIsLightLevelPastThreshold(80, fwdSensors.ThresholdDirection.Over)) {
-        fwdSensors.ledRing.fwdSetBrightness(9)
+        fwdMotors.middleServo.fwdSetSpeed(90)
     } else if (fwdSensors.solar1.fwdIsLightLevelPastThreshold(50, fwdSensors.ThresholdDirection.Over)) {
-        fwdSensors.ledRing.fwdSetBrightness(1)
+        fwdMotors.middleServo.fwdSetSpeed(50)
     } else {
-        fwdSensors.ledRing.fwdSetBrightness(0)
+        fwdMotors.middleServo.fwdSetSpeed(0)
     }
 })
